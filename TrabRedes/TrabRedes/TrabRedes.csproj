@@ -135,6 +135,7 @@
     <Content Include="login.html" />
     <Content Include="medicos.html" />
     <Content Include="servicos.html" />
+    <Content Include="Sql.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
