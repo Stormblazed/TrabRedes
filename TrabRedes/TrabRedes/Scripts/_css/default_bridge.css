@@ -1,0 +1,31 @@
+﻿.btn3 {
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: middle;
+    /*background: #2675B8;*/
+    /*color: #fff;*/
+    border: 1px solid transparent;
+    border-radius: 4px;
+    width: 130px;
+    height:28px;
+    font-family: Open Sans,Segoe UI Light,Segoe,Verdana, Arial;
+    font-size: x-small;
+}
+.dn {
+    display:none;
+}
+li {
+    list-style-type: none;
+}
+
+.headings {
+    background: unset !important;
+}
+
+.modal-backdrop {
+    z-index: auto !important;
+}
+
+.navbar {
+margin-bottom: 0px !important;
+}
