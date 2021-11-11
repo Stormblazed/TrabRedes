@@ -80,10 +80,12 @@ namespace TrabRedes.Pages
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            object _pnlListagem = Master.FindControl("__PnlListagem");
+            ((System.Web.UI.Control)_pnlListagem).Visible = true;
 
 
         }
 
-        
+
     }
 }

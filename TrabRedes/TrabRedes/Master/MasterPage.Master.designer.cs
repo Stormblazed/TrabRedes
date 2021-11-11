@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sib.Bessatec.Pages
+namespace TrabRedes.Pages
 {
 
 
-    public partial class SIB
+    public partial class MasterPage
     {
 
         /// <summary>
@@ -42,6 +42,15 @@ namespace Sib.Bessatec.Pages
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// __PnlListagem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel @__PnlListagem;
+
+        /// <summary>
         /// Pesquisa control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace Sib.Bessatec.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Pesquisa;
+
+        /// <summary>
+        /// __PnlEdicao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel @__PnlEdicao;
 
         /// <summary>
         /// Edicao control.

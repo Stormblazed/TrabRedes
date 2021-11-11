@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="Sib.Bessatec.Pages.SIB" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="TrabRedes.Pages.MasterPage" %>
 
 <!DOCTYPE html>
 
@@ -33,7 +33,7 @@
 
             <a class="navbar-brand mr-1 pl-1" href="../index.html">
                 <img src="../images/Icon.png" style="width: 5% !important; height: 5% !important;" />
-                 SGM - <small class="text-info">Sistema de Gerenciamento Medico</small></a>
+                SGM - <small class="text-info">Sistema de Gerenciamento Medico</small></a>
             <!-- Navbar Search -->
             <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
@@ -54,17 +54,33 @@
                 <div class="container-fluid">
 
                     <!-- Breadcrumbs-->
-               <%--     <ol class="breadcrumb">
+                    <%--     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="Inicio.aspx">Conexões de Clientes</a>
                         </li>
                         <li class="breadcrumb-item active">
                             <a href="EstruturaRotinaSistema.aspx">Estrutura Rotina Sistema</a></li>
                     </ol>--%>
-                    <asp:ContentPlaceHolder ID="Pesquisa" runat="server">
-                    </asp:ContentPlaceHolder>
-                    <asp:ContentPlaceHolder ID="Edicao" runat="server">
-                    </asp:ContentPlaceHolder>
+                    <asp:Panel ID="__PnlListagem" runat="server" Visible="false">
+                        <div class="card card-default SMA-floating">
+                            <div class="card-header">
+                            </div>
+                            <div class="card-body">
+                                <asp:ContentPlaceHolder ID="Pesquisa" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                    </asp:Panel>
+                    <asp:Panel ID="__PnlEdicao" runat="server" Visible="false">
+                        <div class="card card-default SMA-floating">
+                            <div class="card-header">
+                            </div>
+                            <div class="card-body">
+                                <asp:ContentPlaceHolder ID="Edicao" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                    </asp:Panel>
                 </div>
                 <!-- /.container-fluid -->
 

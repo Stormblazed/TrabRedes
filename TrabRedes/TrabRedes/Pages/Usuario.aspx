@@ -1,9 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/MasterPage.Master" AutoEventWireup="true" CodeBehind="Usuario.aspx.cs" Inherits="TrabRedes.Pages.Usuario" %>
+﻿<%@ Page Title="Cadastro de Usuario" Language="C#" MasterPageFile="~/Master/MasterPage.Master" AutoEventWireup="true" CodeBehind="Usuario.aspx.cs" Inherits="TrabRedes.Pages.Usuario" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <link href="../plugins/datatables/datatables.min.css" rel="stylesheet" />
-    <link href="../plugins/datepicker/datepicker.min.css" rel="stylesheet" />
+    <link href="../scripts/datatables/datatables.min.css" rel="stylesheet" />
+    <link href="../scripts/datepicker/datepicker.min.css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Pesquisa" runat="server">
+<asp:Content ID="Pesquisa" ContentPlaceHolderID="Pesquisa" runat="server">
     <div class="card bg-light-gradient">
         <div class="card-body">
             <div class="row">
@@ -42,9 +43,10 @@
         </tbody>
     </table>
 </asp:Content>
-<asp:Content ID="Content6" ContentPlaceHolderID="Edicao" runat="server">
-    <div class="col-md-12">
-        <%--CARD DOS DADOS CADASTRAIS DO EMPREGADO--%>
+
+<asp:Content ID="Edicao" ContentPlaceHolderID="Edicao" runat="server">
+      <div class="col-md-12">
+        
         <div class="card mt-3 card-info">
             <div class="card-header">
                 <span>DADOS PESSOAIS</span>
@@ -107,7 +109,7 @@
             </div>
         </div>
 
-        <%--CARD ENDEREÇO--%>
+        
         <div class="card mt-3 card-info">
             <div class="card-header">
                 <span>ENDEREÇO</span>
@@ -150,7 +152,7 @@
             </div>
         </div>
 
-        <%--CARD CADASTRO DOS REGISTROS PROFISSIONAIS--%>
+        
         <div class="card mt-3 card-info">
             <div class="card-header">
                 <span>REGISTRO PROFISSIONAL</span>
@@ -201,7 +203,7 @@
             </div>
         </div>
 
-        <%--CARD CADASTRO DOS DADOS BANCÁRIOS--%>
+        
         <div class="card mt-3 card-info">
             <div class="card-header">
                 <span>DADOS BANCÁRIOS</span>
@@ -224,21 +226,21 @@
                         <span>* Conta:</span>
                         <asp:TextBox ID="txtConta" runat="server" MaxLength="12" CssClass="form-control form-control-sm"></asp:TextBox>
                     </div>
-                    <%--<div class="col-md-3">
+                   <div class="col-md-3">
                         <span>Observação:</span>
                         <asp:TextBox ID="txtObs" runat="server" CssClass="form-control form-control-sm"></asp:TextBox>
-                    </div>--%>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </asp:Content>
 
-<asp:Content ID="Content8" ContentPlaceHolderID="footer" runat="server">
-    <script type="text/javascript" src="../plugins/datatables/datatables.min.js"></script>
-    <script type="text/javascript" src="../plugins/autocomplete/jquery.autocomplete.js"></script>
-    <script type="text/javascript" src="../plugins/datepicker/datepicker.min.js"></script>
-    <script src="../plugins/inputmask/jquery.inputmask.bundle.js"></script>
+<asp:Content ID="footer" ContentPlaceHolderID="footer" runat="server">
+    <script type="text/javascript" src="../scripts/datatables/datatables.min.js"></script>
+    <script type="text/javascript" src="../scripts/autocomplete/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="../scripts/datepicker/datepicker.min.js"></script>
+    <script src="../scripts/inputmask/jquery.inputmask.bundle.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             Pesquisar();
@@ -306,7 +308,7 @@
             }
         }
 
-        function consultarCEP(el) {
+      <%--  function consultarCEP(el) {
             if (!isButtonEnabled($(el))) { return false; }
             disableButtonAndWait($(el));
 
@@ -330,6 +332,6 @@
                 openModalMsg(msg, true);
                 enableButtonAndRemoveWait(el);
             });
-        }
+        }--%>
     </script>
 </asp:Content>
