@@ -63,6 +63,8 @@
                     </ol>--%>
                     <asp:ContentPlaceHolder ID="Pesquisa" runat="server">
                     </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="Edicao" runat="server">
+                    </asp:ContentPlaceHolder>
                 </div>
                 <!-- /.container-fluid -->
 
