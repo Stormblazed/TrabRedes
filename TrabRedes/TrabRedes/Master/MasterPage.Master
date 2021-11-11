@@ -27,7 +27,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="height: 100%">
 
         <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -47,7 +47,7 @@
 
         </nav>
 
-        <div id="wrapper">
+        <div id="wrapper" style="height: 100%">
 
             <div id="content-wrapper">
 
