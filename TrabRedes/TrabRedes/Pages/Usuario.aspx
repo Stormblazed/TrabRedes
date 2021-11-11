@@ -8,6 +8,9 @@
     <asp:HiddenField runat="server" ID="hideUsuario" />
     <asp:Button ID="btnEditar" class="d-none" runat="server" OnClick="btnEditar_Click" />
     <div class="card bg-light-gradient mb-2">
+        <div class="card-header">
+             <div class="btn btn-sm btn-danger mr-2" onclick="openEdit('VOLTARINICIO');">Voltar&nbsp;<i class="fa fa-arrow-left" title="Voltar"></i></div>
+        </div>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4">
@@ -50,6 +53,7 @@
 </asp:Content>
 
 <asp:Content ID="Edicao" ContentPlaceHolderID="Edicao" runat="server">
+      <asp:HiddenField runat="server" ID="hideusuarioeditar" />
     <div  class="row">
           <div class="col-md-8  d-flex align-items-end float-xl-left">
                     <div class="btn btn-sm btn-danger mr-2" onclick="openEdit('VOLTAR');">Voltar&nbsp;<i class="fa fa-arrow-left" title="Voltar"></i></div>
@@ -112,6 +116,8 @@
                 $('#<%= btnEditar.ClientID %>').click();                
             } else if (t == "VOLTAR") {                
                 location.href = '../Pages/Usuario.aspx';
+            } else if (t == "VOLTARINICIO") {
+                location.href = '../Pages/InicioPage.aspx';
             } else if (t != "") {
                 $('#<%= hideUsuario.ClientID %>').val(t);
                 $('#<%= btnEditar.ClientID %>').click();
@@ -121,13 +127,33 @@
 
         function openSalvar(el) {
             doSecureAction({
-                sid: { sid: el , f: $("form:eq(0)").serialize() },
-                method: 'getSalvar'
+                sid: { sid: "" , f: $("form:eq(0)").serialize() },
+                method: 'getSalvarUsuario'
             }, function (_d) {
-                
-
+                openModalMsg(_d.Message, false, function () {
+                if (_d.Message == "Alterado com Sucesso") {
+                    location.href = '../Pages/Usuario.aspx';
+                }
+                });
             });
 
         }
+
+        function openDelete(dt) {
+            var sid = dt.rows({ selected: true }).nodes().to$().map(function (e) { return $(this).attr("id"); }).get().join();
+            doSecureAction({
+                sid: { sid: sid, f: $("form:eq(0)").serialize() },
+                method: 'getDelete'
+            }, function (_d) {
+                openModalMsg(_d.Message, false, function () {
+                    if (_d.Message == "Deletado com Sucesso") {
+                        location.href = '../Pages/Usuario.aspx';
+                    }
+                });
+            });
+
+        }
+
+        
     </script>
 </asp:Content>

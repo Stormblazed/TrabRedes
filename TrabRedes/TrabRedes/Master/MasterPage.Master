@@ -37,7 +37,7 @@
             <!-- Navbar Search -->
             <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="../pages/login.aspx"><i class="fas fa-sign-out-alt"></i></button>
+                    <a class="btn btn-link btn-sm text-white order-1 order-sm-0" href="../pages/login.aspx"><i class="fas fa-sign-out-alt"></i></a>
 
                 </div>
             </div>

@@ -35,10 +35,10 @@ namespace TrabRedes.Pages
                 System.Collections.Specialized.NameValueCollection queryS = System.Web.HttpUtility.ParseQueryString(f);
 
                 string txtNick = queryS["txtNick"];
-                string txtSenha = queryS["txtNick"];
+                string txtSenha = queryS["txtSenha"];
 
 
-                if(txtNick == string.Empty && txtSenha == string.Empty)
+                if(txtNick == string.Empty || txtSenha == string.Empty)
                 {
                     retorno.Message = "Insira todos os dados!";
                     retorno.Data = "Insira todos os dados!";

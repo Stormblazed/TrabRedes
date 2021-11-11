@@ -72,7 +72,7 @@ namespace TrabRedes.Pages
                 }
 
 
-                retorno.Message = "Registros removidos com sucesso";
+                retorno.Message = "Pesquisa realizada com sucesso";
                 retorno.Data = stringHtml.ToString();
                 retorno.Sucess = true;
 
@@ -87,7 +87,48 @@ namespace TrabRedes.Pages
         }
 
         [System.Web.Services.WebMethod()]
-        public static AjaxResponse getSalvar(string sid, string f)
+        public static AjaxResponse getDelete(string sid, string f)
+        {
+            AjaxResponse retorno = new AjaxResponse();
+            ClsMysql Adados = new ClsMysql();
+
+            try
+            {
+                ClsDefautSib valid = new ClsDefautSib();
+                if (valid.validateAjaxRequest(f) == false)
+                {
+                    retorno.Message = "Ajax request validation failed";
+                    retorno.Data = String.Empty;
+                    retorno.Sucess = false;
+                    return retorno;
+                }
+
+                System.Collections.Specialized.NameValueCollection queryS = System.Web.HttpUtility.ParseQueryString(f);
+              
+
+                Adados.MysqlConstruction();
+              
+                System.Text.StringBuilder stringHtml = new StringBuilder();
+                string sSql = string.Empty;
+                sSql = "DELETE FROM USUARIO WHERE COD_USUARIO IN (" + sid + ")";
+                Adados.MySqlExecutaData(sSql);
+
+                retorno.Message = "Deletado com Sucesso";
+                retorno.Data = "Deletado com Sucesso";
+                retorno.Sucess = true;
+
+            }
+            catch (Exception ex)
+            {
+                retorno.Message = "Não foi possível realizar a ação solicitada";
+                retorno.Data = ex.Message;
+                retorno.Sucess = false;
+            }
+            return retorno;
+        }
+
+        [System.Web.Services.WebMethod()]
+        public static AjaxResponse getSalvarUsuario(string sid, string f)
         {
             AjaxResponse retorno = new AjaxResponse();
             ClsMysql Adados = new ClsMysql();
@@ -105,11 +146,14 @@ namespace TrabRedes.Pages
                 //Dim queryS As System.Collections.Specialized.NameValueCollection = System.Web.HttpUtility.ParseQueryString(f)
                 System.Collections.Specialized.NameValueCollection queryS = System.Web.HttpUtility.ParseQueryString(f);
 
-                string txtNick = queryS["txtNick"];
-                string txtSenha = queryS["txtNick"];
+                string txtNick = queryS["ctl00$Edicao$txtNick"];
+                string txtNome = queryS["ctl00$Edicao$txtNome"];
+                string txtSenha = queryS["ctl00$Edicao$txtSenha"];
+                string txtConfimSenha = queryS["ctl00$Edicao$txtConfirmarSenha"];
+                string hideUsuario = queryS["ctl00$Edicao$hideusuarioeditar"];
 
 
-                if (txtNick == string.Empty && txtSenha == string.Empty)
+                if (txtSenha != txtConfimSenha || txtNick == string.Empty || txtNome == string.Empty || txtSenha == string.Empty || txtConfimSenha == string.Empty)
                 {
                     retorno.Message = "Insira todos os dados!";
                     retorno.Data = "Insira todos os dados!";
@@ -122,20 +166,16 @@ namespace TrabRedes.Pages
                 DataTable DtbReturn = new DataTable();
                 StringBuilder stringQuery = new StringBuilder();
 
-                stringQuery.Append("SELECT 1 FROM usuario where NICK_USUARIO = '" + txtNick + "' AND DSC_SENHA = '" + txtSenha + "';");
-
-                DtbReturn = Adados.MySqlReturnData(stringQuery.ToString());
-
-                if (DtbReturn.Rows.Count == 0)
-                {
-                    retorno.Message = "Dados Incorretos.";
-                    retorno.Data = "Dados Incorretos.";
-                    retorno.Sucess = true;
-                    return retorno;
+                if (hideUsuario == "") {
+                    stringQuery.Append("INSERT INTO usuario(NICK_USUARIO,NOM_USUARIO,DSC_SENHA) VALUES ('"+ txtNick + "','"+ txtNome + "','" + txtSenha + "');");
+                }
+                else{
+                    stringQuery.Append("UPDATE usuario SET NICK_USUARIO = '" + txtNick + "' , NOM_USUARIO = '" + txtNome + "' , DSC_SENHA = '" + txtSenha + "'  WHERE COD_USUARIO = '" + hideUsuario + "'");
                 }
 
+               Adados.MySqlExecutaData(stringQuery.ToString());                
 
-                retorno.Message = "Logado";
+                retorno.Message = "Alterado com Sucesso";
                 retorno.Data = "Logado";
                 retorno.Sucess = true;
 
@@ -192,7 +232,7 @@ namespace TrabRedes.Pages
                 }
                 foreach (DataRow row in DtbReturn.Rows)
                 {
-
+                    hideusuarioeditar.Value = hideUsuario.Value;
                     txtNick.Text = row["NICK_USUARIO"].ToString();
                     txtNome.Text = row["NOM_USUARIO"].ToString();
                     txtSenha.Text = row["DSC_SENHA"].ToString();
