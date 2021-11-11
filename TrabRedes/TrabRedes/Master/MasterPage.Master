@@ -52,17 +52,17 @@
             <div id="content-wrapper">
 
                 <div class="container-fluid">
-
-                    <!-- Breadcrumbs-->
-                    <%--     <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="Inicio.aspx">Conexões de Clientes</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            <a href="EstruturaRotinaSistema.aspx">Estrutura Rotina Sistema</a></li>
-                    </ol>--%>
+                    <div id="divBarra" runat="server">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="InicioPage.aspx">Inicio</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <a id="__LblTitulo" runat="server"></a></li>
+                        </ol>
+                    </div>
                     <asp:Panel ID="__PnlListagem" runat="server" Visible="false">
-                        <div class="card card-default SMA-floating">                            
+                        <div class="card card-default SMA-floating">
                             <div class="card-body">
                                 <asp:ContentPlaceHolder ID="Pesquisa" runat="server">
                                 </asp:ContentPlaceHolder>
@@ -70,7 +70,7 @@
                         </div>
                     </asp:Panel>
                     <asp:Panel ID="__PnlEdicao" runat="server" Visible="false">
-                        <div class="card card-default SMA-floating">                           
+                        <div class="card card-default SMA-floating">
                             <div class="card-body">
                                 <asp:ContentPlaceHolder ID="Edicao" runat="server">
                                 </asp:ContentPlaceHolder>

@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Pesquisa" runat="server">
     <div class="row clearfix" id="divShortcut">
-        <div class='col-md-3' id='divUsuario'>
+        <div class='col-md-4' id='divUsuario'>
             <div class='small-box bg-gradient-light'>
                 <div class='inner'>
                     <h5>Cadastro Usuário</h5>
@@ -17,7 +17,7 @@
                 </a>
             </div>
         </div>
-        <div class='col-md-3' id='divMedico'>
+        <div class='col-md-4' id='divMedico'>
             <div class='small-box bg-gradient-light'>
                 <div class='inner'>
                     <h5>Cadastro Medico</h5>
@@ -30,7 +30,7 @@
                 </a>
             </div>
         </div>
-        <div class='col-md-3' id='divPaciente'>
+        <div class='col-md-4' id='divPaciente'>
             <div class='small-box bg-gradient-light'>
                 <div class='inner'>
                     <h5>Cadastro Paciente</h5>
@@ -43,7 +43,7 @@
                 </a>
             </div>
         </div>
-        <div class='col-md-3' id='divAtendimento'>
+        <div class='col-md-4' id='divAtendimento'>
             <div class='small-box bg-gradient-light'>
                 <div class='inner'>
                     <h5>Cadastro Atendimento</h5>

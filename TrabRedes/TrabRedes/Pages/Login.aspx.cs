@@ -83,7 +83,9 @@ namespace TrabRedes.Pages
             object _pnlListagem = Master.FindControl("__PnlListagem");
             ((System.Web.UI.Control)_pnlListagem).Visible = true;
 
-
+            object divBarra = Master.FindControl("divBarra");
+            ((System.Web.UI.Control)divBarra).Visible = false;
+            
         }
 
 
