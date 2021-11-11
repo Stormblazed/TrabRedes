@@ -5,25 +5,26 @@
     <link href="../scripts/datepicker/datepicker.min.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Pesquisa" ContentPlaceHolderID="Pesquisa" runat="server">
-    <div class="card bg-light-gradient">
+    <div class="card bg-light-gradient mb-2">
         <div class="card-body">
-            <div class="row">
-                <div class="col-md-1">
-                    <asp:DropDownList ID="ddlFiltro" runat="server" CssClass="form-control form-control-sm">
-                        <asp:ListItem Value="0">NOME</asp:ListItem>
-                        <asp:ListItem Value="1">CPF</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
+            <div class="row">                
                 <div class="col-md-2">
-                    <asp:TextBox ID="txtFiltro" runat="server" CssClass="form-control form-control-sm"></asp:TextBox>
+                    <div class="form-group">
+                        <label>Nick</label>
+                        <input id="txtNick" runat="server" class="form-control form-control-sm" type="text">
+                    </div>
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-2  d-flex align-items-end">
+                <div class="col-md-10  d-flex align-items-end float-xl-left">
                     <div class="btn btn-sm btn-info" onclick="Pesquisar(this);">Pesquisar&nbsp;<i class="fa fa-search" title="Pesquisar os registros"></i></div>
                 </div>
             </div>
         </div>
     </div>
-    <table id="tableLista" class="SMA-table table table-striped cell-border display w-100">
+    
+    <div class="card bg-light-gradient mb-2">
+        <div class="card-body">
+            <div class="row">                
+        <table id="tableLista" class="SMA-table table table-striped cell-border display w-100">
         <thead>
             <tr class="headings">
                 <th data-priority="1" style="display: table-cell; width: 1%"></th>
@@ -42,11 +43,14 @@
             </tr>
         </tbody>
     </table>
+                </div>
+        </div>
+    </div>
 </asp:Content>
 
 <asp:Content ID="Edicao" ContentPlaceHolderID="Edicao" runat="server">
-      <div class="col-md-12">
-        
+    <div class="col-md-12">
+
         <div class="card mt-3 card-info">
             <div class="card-header">
                 <span>DADOS PESSOAIS</span>
@@ -109,7 +113,7 @@
             </div>
         </div>
 
-        
+
         <div class="card mt-3 card-info">
             <div class="card-header">
                 <span>ENDEREÇO</span>
@@ -152,7 +156,7 @@
             </div>
         </div>
 
-        
+
         <div class="card mt-3 card-info">
             <div class="card-header">
                 <span>REGISTRO PROFISSIONAL</span>
@@ -203,7 +207,7 @@
             </div>
         </div>
 
-        
+
         <div class="card mt-3 card-info">
             <div class="card-header">
                 <span>DADOS BANCÁRIOS</span>
@@ -226,7 +230,7 @@
                         <span>* Conta:</span>
                         <asp:TextBox ID="txtConta" runat="server" MaxLength="12" CssClass="form-control form-control-sm"></asp:TextBox>
                     </div>
-                   <div class="col-md-3">
+                    <div class="col-md-3">
                         <span>Observação:</span>
                         <asp:TextBox ID="txtObs" runat="server" CssClass="form-control form-control-sm"></asp:TextBox>
                     </div>

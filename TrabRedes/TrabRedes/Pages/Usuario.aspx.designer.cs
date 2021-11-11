@@ -15,22 +15,13 @@ namespace TrabRedes.Pages
     {
 
         /// <summary>
-        /// ddlFiltro control.
+        /// txtNick control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFiltro;
-
-        /// <summary>
-        /// txtFiltro control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFiltro;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNick;
 
         /// <summary>
         /// txtNome control.

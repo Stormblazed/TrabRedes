@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TrabRedes",
+    "\\TrabRedes\\packages",
+    "\\TrabRedes\\TrabRedes",
+    "\\TrabRedes\\TrabRedes\\assets",
+    "\\TrabRedes\\TrabRedes\\Master",
+    "\\TrabRedes\\TrabRedes\\Pages"
   ],
-  "SelectedNode": "\\TrabRedes.sln",
+  "SelectedNode": "\\TrabRedes\\TrabRedes\\Pages\\Login.aspx.cs",
   "PreviewInSolutionExplorer": false
 }

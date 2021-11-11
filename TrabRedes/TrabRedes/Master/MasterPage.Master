@@ -62,9 +62,7 @@
                             <a href="EstruturaRotinaSistema.aspx">Estrutura Rotina Sistema</a></li>
                     </ol>--%>
                     <asp:Panel ID="__PnlListagem" runat="server" Visible="false">
-                        <div class="card card-default SMA-floating">
-                            <div class="card-header">
-                            </div>
+                        <div class="card card-default SMA-floating">                            
                             <div class="card-body">
                                 <asp:ContentPlaceHolder ID="Pesquisa" runat="server">
                                 </asp:ContentPlaceHolder>
@@ -72,9 +70,7 @@
                         </div>
                     </asp:Panel>
                     <asp:Panel ID="__PnlEdicao" runat="server" Visible="false">
-                        <div class="card card-default SMA-floating">
-                            <div class="card-header">
-                            </div>
+                        <div class="card card-default SMA-floating">                           
                             <div class="card-body">
                                 <asp:ContentPlaceHolder ID="Edicao" runat="server">
                                 </asp:ContentPlaceHolder>

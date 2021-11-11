@@ -177,9 +177,9 @@
     <Content Include="Content\Bootstrap\bootstrap.css" />
     <Content Include="Content\Bootstrap\bootstrap.min.css" />
     <Content Include="Content\Defaut.css" />
+    <Content Include="favicon.ico" />
     <Content Include="images\icon.png" />
     <Content Include="index.html" />
-    <Content Include="login.html" />
     <Content Include="Master\MasterPage.Master" />
     <Content Include="Pages\Atendimento.aspx" />
     <Content Include="Pages\Login.aspx" />
