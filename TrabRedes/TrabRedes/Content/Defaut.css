@@ -1,0 +1,15 @@
+﻿#content-wrapper {
+    background-color: rgba(0,0,0,.04);
+}
+.breadcrumb {
+    background-color: white;    
+}
+.text-black {
+    color : black !important;
+}
+.card-header {
+    background-color: white;
+}
+.sidebar-defaut{
+height: auto !important;
+}

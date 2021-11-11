@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="Sib.Bessatec.Pages.SIB" %>
+
+<!DOCTYPE html>
+
+<html lang="pt_br">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Sib">
+    <meta name="author" content="Wallace Batista Bessa">
+
+
+    <title id="lblTitle">Trab Redes</title>
+
+    <link href="../Content/Bootstrap/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="../Scripts/fontawnsome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Scripts/fontawesome-free/css/all.min.css" rel="stylesheet" />
+
+    <link href="../Scripts/Template/css/sb-admin.min.css" rel="stylesheet" />
+
+    <link href="../Content/Defaut.css" rel="stylesheet" />
+    <link href="../Scripts/adminlte/css/adminlte.min.css" rel="stylesheet" />
+    <link href="../Scripts/fontawnsome/css/font-awesome.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+            <a class="navbar-brand mr-1 pl-1" href="../index.html">
+                <img src="../images/Icon.png" style="width: 5% !important; height: 5% !important;" />
+                 SGM - <small class="text-info">Sistema de Gerenciamento Medico</small></a>
+            <!-- Navbar Search -->
+            <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="../pages/login.aspx"><i class="fas fa-sign-out-alt"></i></button>
+
+                </div>
+            </div>
+
+            <!-- Navbar -->
+
+
+        </nav>
+
+        <div id="wrapper">
+
+            <div id="content-wrapper">
+
+                <div class="container-fluid">
+
+                    <!-- Breadcrumbs-->
+               <%--     <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="Inicio.aspx">Conexões de Clientes</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <a href="EstruturaRotinaSistema.aspx">Estrutura Rotina Sistema</a></li>
+                    </ol>--%>
+                    <asp:ContentPlaceHolder ID="Pesquisa" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <!-- /.container-fluid -->
+
+                <!-- Sticky Footer -->
+                <footer class="sticky-footer w-100">
+                    <div class="container my-auto">
+                        <div class="copyright  my-auto">
+                            <div class="float-right d-none d-sm-inline small">
+                                <b>versão:</b> 3.0.1.4 de <%=DateTime.Now.ToString("dd/MM/yy HH:mm") %>
+                            </div>
+                            <!-- Default to the left -->
+                            <strong>Copyright &copy; 2014-<%=DateTime.Now.Year %> <a href="https://github.com/Stormblazed/TrabRedes">Git Hub</a>.</strong>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+    </form>
+    <script type="text/javascript" src="../Scripts/jquery/jquery.min.js"></script>
+
+    <script type="text/javascript" src="../Scripts/default.js"></script>
+    <script type="text/javascript" src="../Scripts/SMAPlugin.js"></script>
+
+    <script type="text/javascript" src="../Scripts/toastr/toastr.min.js"></script>
+
+
+
+    <script type="text/javascript" src="../Scripts/adminlte/js/adminlte.min.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Bootstrap/bootstrap.bundle.min.js"></script>
+    <%--   <script src="../Scripts/jquery/jquery.slim.min.js"></script>--%>
+    <%--<script src="../Scripts/popper/popper.min.js"></script>--%>
+    <script type="text/javascript" src="../Scripts/Template/js/sb-admin.js"></script>
+    <asp:ContentPlaceHolder ID="footer" runat="server">
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>
